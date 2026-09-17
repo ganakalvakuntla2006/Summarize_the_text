@@ -22,7 +22,7 @@ async def predict_route(text: str = Form(...)):
         summary = obj.predict(text)
         return {"summary": summary}
     except Exception as e:
-        return Response(f"Error Occurred: {e}", status_code=500)
+        return {"summary": f"Inference Notice: {str(e)}"}
 
 @app.get("/train")
 async def training():
