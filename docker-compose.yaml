@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  text-summarizer:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+    volumes:
+      - ./artifacts:/app/artifacts
+      - ./logs:/app/logs
+    restart: always
