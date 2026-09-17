@@ -35,6 +35,6 @@ async def training():
 if __name__ == "__main__":
     print("\n" + "="*50)
     print("🚀 Server running!")
-    print("👉 Open in browser: http://localhost:8080  OR  http://127.0.0.1:8080")
+    print("👉 Click here to open in browser: http://localhost:8080")
     print("="*50 + "\n")
-    uvicorn.run(app, host="0.0.0.0", port=8080)
+    uvicorn.run(app, host="127.0.0.1", port=8080)
