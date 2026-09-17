@@ -1,0 +1,24 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Model & MLOps Artifacts
+artifacts/
+logs/
+*.log
+data/
+*.zip
+
+# Hugging Face & PyTorch cache
+.cache/
+huggingface/
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
