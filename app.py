@@ -3,14 +3,17 @@ from fastapi.responses import HTMLResponse, Response
 from fastapi.templating import Jinja2Templates
 import uvicorn
 import os
+from pathlib import Path
 from textSummarizer.pipeline.prediction import PredictionPipeline
 
 app = FastAPI(title="Text Summarizer API")
-templates = Jinja2Templates(directory="templates")
+
+BASE_DIR = Path(__file__).resolve().parent
+templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
 
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(request=request, name="index.html")
 
 @app.post("/predict")
 async def predict_route(text: str = Form(...)):
