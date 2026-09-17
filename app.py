@@ -30,4 +30,8 @@ async def training():
         return Response(f"Error Occurred: {e}", status_code=500)
 
 if __name__ == "__main__":
+    print("\n" + "="*50)
+    print("🚀 Server running!")
+    print("👉 Open in browser: http://localhost:8080  OR  http://127.0.0.1:8080")
+    print("="*50 + "\n")
     uvicorn.run(app, host="0.0.0.0", port=8080)
